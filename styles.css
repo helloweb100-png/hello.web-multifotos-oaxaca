@@ -479,6 +479,7 @@ button { cursor: pointer; }
 .svc--anil { --bg: var(--anil); --fg: var(--crema); --focus: var(--sol); --chip: rgba(255, 241, 216, .6); }
 .svc--grana { --bg: var(--grana); --fg: var(--crema); --focus: var(--sol); --chip: rgba(255, 241, 216, .6); }
 .svc--verde { --bg: var(--verde); --fg: var(--crema); --focus: var(--sol); --chip: rgba(255, 241, 216, .6); }
+.svc--naranja { --bg: var(--naranja); --fg: var(--anil); }
 /* flor del logo como marca de agua que gira lento */
 .svc::after {
     content: ""; position: absolute; z-index: -1; right: -9%; bottom: -22%; width: 46%; aspect-ratio: 1;
@@ -499,6 +500,12 @@ button { cursor: pointer; }
 .svc-fig { display: grid; place-items: center; order: -1; }
 .svc-fig .arch { width: min(100%, 19rem); aspect-ratio: 4 / 5; box-shadow: 0 0 0 .3rem rgba(255, 241, 216, .9), 0 30px 50px -28px rgba(30, 26, 77, .75); }
 .svc--wide .svc-fig .arch { width: min(100%, 26rem); aspect-ratio: 5 / 4; }
+/* Arco ilustrado (sin foto) para las tarjetas de generación e instantáneas: cambiar por <img> cuando haya fotos reales */
+.arch--ico { display: grid; place-content: center; justify-items: center; gap: 1.1rem; padding: 1.5rem; text-align: center; background: var(--ab, var(--anil)); color: var(--crema); }
+.arch--grana { --ab: var(--grana); }
+.arch--ico > i { font-size: clamp(5.5rem, 12vw, 8.5rem); line-height: 1; color: var(--sol); }
+.arch--ico .ico-row { display: flex; gap: 1.4rem; font-size: 2rem; line-height: 1; }
+.arch--ico p { font-family: var(--f-hand); font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.1; max-width: 12ch; }
 .svc-fig img, .cuidado .arch img { animation: kenburns 18s ease-in-out infinite alternate; }
 @keyframes kenburns { from { transform: scale(1.02); } to { transform: scale(1.11) translate(-1.5%, -1%); } }
 
@@ -507,6 +514,7 @@ button { cursor: pointer; }
     .svc { position: sticky; top: calc(5.4rem + var(--i, 0) * .9rem); }
     .svc:nth-child(1) { --i: 0; } .svc:nth-child(2) { --i: 1; } .svc:nth-child(3) { --i: 2; }
     .svc:nth-child(4) { --i: 3; } .svc:nth-child(5) { --i: 4; } .svc:nth-child(6) { --i: 5; }
+    .svc:nth-child(7) { --i: 6; } .svc:nth-child(8) { --i: 7; }
     .svc-in { grid-template-columns: 1.05fr .95fr; gap: 3rem; min-height: min(36rem, calc(100dvh - 9rem)); }
     .svc-fig { order: 0; }
     .svc:nth-child(even) .svc-fig { order: -1; }
